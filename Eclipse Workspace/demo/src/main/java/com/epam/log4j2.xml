@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT">
+			<PatternLayout pattern=" %-5level %logger{36} - %msg%n" />
+		</Console>
+
+		<Console name="CommonConsoleAppender" target="SYSTEM_OUT">
+			<PatternLayout pattern=" %msg %n" />
+		</Console>
+
+
+
+		<File name="FileAppender"
+			fileName="applicationfile-${date:yyyyMMdd}.log"
+			immediateFlush="false" append="true">
+			<PatternLayout
+				pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
+	</Appenders>
+
+	<Loggers>
+
+		<!-- in that you will get two output of log message one for your com.epam.quiz_management.app 
+			and one for root that call additivity to overcome from that put additivity 
+			false -->
+		<Logger name="org.hibernate" level="error" additivity="false">
+
+		</Logger>
+		<Logger name="org.hibernate.SQL" level="debug"
+			additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="FileAppender" />
+		</Logger>
+
+
+		<Logger name="org.hibernate.type.descriptor.sql" level="error"
+			additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="FileAppender" />
+		</Logger>
+
+		<Logger name="template.Admin" level="info" additivity="false">
+			<AppenderRef ref="CommonConsoleAppender" />
+			<AppenderRef ref="FileAppender" level="error" />
+
+		</Logger>
+
+		<Logger name="com.epam.Quiz_Management.App" level="info"
+			additivity="false">
+			<AppenderRef ref="CommonConsoleAppender" />
+			<AppenderRef ref="FileAppender" level="error" />
+		</Logger>
+
+
+		<Logger name="template.QuestionTemplate" level="debug"
+			additivity="false">
+			<AppenderRef ref="CommonConsoleAppender" />
+			<AppenderRef ref="FileAppender" level="error" />
+
+		</Logger>
+
+		<Logger name="template.QuizTemplate" level="debug"
+			additivity="false">
+			<AppenderRef ref="CommonConsoleAppender" />
+			<AppenderRef ref="FileAppender" level="error" />
+
+		</Logger>
+
+		<Logger name="template.UserTemplate" level="debug"
+			additivity="false">
+			<AppenderRef ref="CommonConsoleAppender" />
+			<AppenderRef ref="FileAppender" level="error" />
+
+		</Logger>
+
+
+
+
+
+
+
+
+
+		<Root level="debug">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="FileAppender" />
+		</Root>
+	</Loggers>
+</Configuration>

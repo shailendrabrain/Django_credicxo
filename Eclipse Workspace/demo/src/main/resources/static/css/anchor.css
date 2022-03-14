@@ -1,0 +1,14 @@
+@charset "ISO-8859-1";
+
+a:link, a:visited {
+  background-color:navy;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color:navy;
+}

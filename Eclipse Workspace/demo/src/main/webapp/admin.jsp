@@ -4,18 +4,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-
-<link rel="stylesheet" href="resources/anchor.css">
-
 <title>Insert title here</title>
+<link rel="stylesheet" href="resources/anchor.css">
 </head>
+${message}
 <body>
-hello brother.
+  <p> Welcome To Admin</p>
+  
+
+<a href="adminSignup.jsp">click to signup</a>
 <br>
-<img alt="" src="images/welcome.jpg">
-<br>
-<a href="admin.jsp">go to admin</a>
-<br>
-<a href="user.jsp">go to user</a>
+<a href="adminLogin.jsp">click to login</a>
 </body>
 </html>
